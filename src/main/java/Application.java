@@ -28,12 +28,22 @@ public class Application {
         netcable2.connect(pc1, pc2);
         netcable3.connect(pc2, pc3);
         netcable4.connect(pc3, pc4);
+        pc1.buttonPower();
+        pc2.buttonPower();
+        pc3.WoL();
+        pc4.WoL();
 
-        recursion(pc1, new HashSet<>() {
-        });
+
+         recursion(pc1, new HashSet<>());
 
     }
 
+    /**
+     * Рекурсия для обхода всей топологии сети
+     *
+     * @param current ПК с которого начинается обход сети
+     * @param visited Список ПК которые уже обошли
+     */
     private static void recursion(PC current, Set<PC> visited) {
         System.out.println("Current PC: " + Optional.ofNullable(current)
                 .map(PC::getUuid)

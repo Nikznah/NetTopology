@@ -2,13 +2,13 @@ package Elements;
 
 import lombok.AccessLevel;
 import lombok.Data;
-import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Optional;
 
 /**
- *
+ * Класс интернет кабеля
+ * имеет идентификатор и два подключения
  */
 @Data
 public class Netcable {

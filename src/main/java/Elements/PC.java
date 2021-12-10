@@ -7,7 +7,7 @@ import java.util.Objects;
 import java.util.stream.Collectors;
 
 /**
- * Компуктер
+ * Класс компьютера
  */
 
 @Data
@@ -24,6 +24,23 @@ public class PC {
 
     public void plugIn(Netcable netcable) {
         this.netcables.add(netcable);
+    }
+
+    public void buttonPower() {
+        this.power = !this.power;
+    }
+
+    public void WoL() {
+
+        if (this.netcables == null) {
+            throw new IllegalArgumentException("Компьютер номер - " + this.uuid
+                    + " не подключен к интернету, данная функция не возможна");
+        }
+        if (!this.power) {
+            this.power = true;
+        } else {
+            throw new IllegalStateException("Компьютер уже включен");
+        }
     }
 
     @Override
