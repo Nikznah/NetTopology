@@ -54,7 +54,7 @@ public class Application {
             return;
         }
         visited.add(current);
-        
+
         ArrayList<Netcable> netcables = current.getNetcables();
 
         for (Netcable netcable : netcables) {
