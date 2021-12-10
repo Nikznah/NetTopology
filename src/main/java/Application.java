@@ -34,7 +34,7 @@ public class Application {
         pc4.WoL();
 
 
-         recursion(pc1, new HashSet<>());
+        recursion(pc1, new HashSet<>());
 
     }
 
@@ -48,13 +48,13 @@ public class Application {
         System.out.println("Current PC: " + Optional.ofNullable(current)
                 .map(PC::getUuid)
                 .orElse(null));
+        assert current != null;
 
         if (visited.contains(current)) {
             return;
         }
         visited.add(current);
-
-        assert current != null;
+        
         ArrayList<Netcable> netcables = current.getNetcables();
 
         for (Netcable netcable : netcables) {

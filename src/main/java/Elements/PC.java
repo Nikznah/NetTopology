@@ -1,6 +1,8 @@
 package Elements;
 
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Setter;
 
 import java.util.ArrayList;
 import java.util.Objects;
@@ -14,6 +16,8 @@ import java.util.stream.Collectors;
 public class PC {
     private int uuid;
     private ArrayList<Netcable> netcables;
+
+    @Setter(value = AccessLevel.NONE)
     private boolean power;
 
     public PC(int uuid) {
